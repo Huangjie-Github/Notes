@@ -80,3 +80,4 @@
 
 *使用**Zxing**第三方jar包，使用**MultiFormatWriter**的**encode()**方法生成一个二维码类**BitMatrix**的对象，然后用**MatrixToImageWriter**的流写入方法**writeToStream()**以**png**的形式写入**OutputStresam**流中，如果需要，可以进行相应的编码转换。*
 
+***如果使用get的方式，直接往img标签的src属性添加生成二维码的访问地址即可，并且不需要base64编码。***
