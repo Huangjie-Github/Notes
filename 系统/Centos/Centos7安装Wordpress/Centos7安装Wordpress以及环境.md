@@ -36,7 +36,8 @@ systemctl daemon-reload
 **6、修改默认初始化密码->由于密码策略所以只能设置较为复杂的密码**
 
 ```shell
-alter user 'root'@'localhost' identified by 'ZhonHua@5000Nian'
+#临时密码在/var/log/mysqld.log
+alter user 'root'@'localhost' identified by 'ZhonHua@5000Nian';
 ```
 
 
@@ -49,16 +50,16 @@ show variables like 'validate_password%';
 
 
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\8查看MYSQL密码安全策略.PNG)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\8查看MYSQL密码安全策略.PNG)
 
 **8、修改密码杂度为最低以及把密码长度改为自己想要的**
 
 ```shell
-set global validate_password.policy = LOW;
-set global validate_password.lenght = 6;
+set global validate_password_policy = LOW;
+set global validate_password_length = 6;
 ```
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\10查看修改后的密码策略以及修改为自己想要的最终密码.PNG)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\10查看修改后的密码策略以及修改为自己想要的最终密码.PNG)
 
 **9、修改为自己想要的密码**
 
@@ -133,13 +134,13 @@ systemctl daemon-reload
 
 **httpd监听80端口，mysql监听3306端口，php-fpm监听9000端口**
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\服务启动端口状态.PNG)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\服务启动端口状态.PNG)
 
 ## 五、安装wordpress官网tar.gz安装包
 
 **1、找到tar.gz的下载标签右键获取下载链接->https://ww.wp.xz.cn/download/releases/**
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\wordpress的下载地址.PNG)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\wordpress的下载地址.PNG)
 
 **2、用wget获取wordpress安装包**
 
@@ -159,7 +160,7 @@ tar -zxf wordpress-4.5.20.tar.gz -C /var/www
 vi  /etc/httpd/conf/httpd.conf
 ```
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\修改httpd配置文件.PNG)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\修改httpd配置文件.PNG)
 
 **5、保存修改文件退出后重新启动httpd服务**
 
@@ -167,15 +168,23 @@ vi  /etc/httpd/conf/httpd.conf
 systemctl restart httpd.service
 ```
 
+**6、把wordpress目录赋予apache所有权限**
+
+```shell
+chown -R apache:apache /var/www/wordpress
+```
+
+
+
 ## 六、用浏览器启动绑定服务器的域名或者服务器的IP然后就可以开始配置相关的数据
 
 ***还有一页配置数据库信息忘记截了***
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\wordpress配置个人信息.png)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\wordpress配置个人信息.png)
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\wordpress配置个人信息2.png)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\wordpress配置个人信息2.png)
 
-![](E:\Graph\Typora\Centos7安装Wordpress\images\wordpress配置个人信息3.png)
+![](E:\TyporaText\系统\Centos\Centos7安装Wordpress\images\wordpress配置个人信息3.png)
 
 ### 完结
 
