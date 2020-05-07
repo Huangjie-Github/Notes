@@ -88,6 +88,18 @@ flush privileges;
 systemctl restart mysqld.service
 ```
 
+**13、密码忘记或者策略失败**
+
+```shell
+#关闭密码验证策略，url：vi /root/my.cnf
+skip-grant-tables
+#修改mysql.user表的密码
+update mysql.user set authentication_string=password('新密码') where user='root' ;
+#刷新
+flush privileges ;
+#然后删除skip-grant-tables之后重启MySQL服务
+```
+
 ## 二、安装apache->httpd
 
 **1、安装httpd**
