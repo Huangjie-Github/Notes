@@ -36,3 +36,28 @@ erl -version
 ![](E:\Notes\框架\RabbitMQ\image\4.PNG)
 
 **二、安装Erlang环境->rpm方式安装**
+
+1、安装依赖项
+
+```shell
+yun install -y epel-release
+```
+
+2、下载rpm包
+
+```shell
+wget url
+```
+
+3、安装
+
+```shell
+yum install 'package'
+```
+
+4、验证
+
+```shell
+erl -version
+```
+
