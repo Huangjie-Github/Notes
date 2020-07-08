@@ -42,7 +42,10 @@ npm info vue
 更新模块命令
 
 ```shell
+#老版本安装方式 2.*
 npm install npm –g
+#老版本安装方式 3.* /4.*
+npm install -g @vue/cli
 ```
 
 - `npm install`：表示更新
@@ -72,6 +75,10 @@ npm install vue-cli -g
 vue -V
 ```
 
+---
+
+**老版本构建方式**
+
 1、构建初始化vue项目
 
 ```shell
@@ -98,5 +105,14 @@ npm run dev
 npm run build
 ```
 
+---
 
+**新版本构建方式**
 
+```shell
+vue create vue01
+```
+
+![](E:\Notes\框架\nodejs\image\vue创建.PNG)
+
+可以选择创建的方式，moban是我创建的模板，可以选择default默认，或者Manually重新选择
