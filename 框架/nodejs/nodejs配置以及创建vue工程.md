@@ -44,23 +44,30 @@ npm info vue
 ```shell
 #老版本安装方式 2.*
 npm install npm –g
+```
+
+```shell
 #老版本安装方式 3.* /4.*
 npm install -g @vue/cli
 ```
 
-- `npm install`：表示更新
-
+- npm install`：表示更新
 - `第二个npm`：表示需要更新的模块
-
 - `-g`：表示安装到global目录下
 
-配置global仓的环节变量
+配置NodeJS的环境变量
+
+```shell
+path: D:\software\nodejs
+```
+
+配置global仓的环境变量
 
 ```shell
 path: D:\software\nodejs\node_global
 ```
 
-新增一个`NODE_PATH`环节变量
+新增一个`NODE_PATH`环节变量（子项的全局命令）
 
 ```shell
 D:\software\nodejs\node_global\node_modules
@@ -71,7 +78,7 @@ D:\software\nodejs\node_global\node_modules
 ```shell
 npm install vue -g
 npm install vue-routher -g
-npm install vue-cli -g
+npm install @vue/cli -g
 vue -V
 ```
 
@@ -99,7 +106,7 @@ npm run dev
 
 然后访问**[http://localhost:8080](http://localhost:8080/)**
 
-4、生成静态文件
+4、编译生成静态文件
 
 ```shell
 npm run build
@@ -113,6 +120,15 @@ npm run build
 vue create vue01
 ```
 
-![](E:\Notes\框架\nodejs\image\vue创建.PNG)
-
 可以选择创建的方式，moban是我创建的模板，可以选择default默认，或者Manually重新选择
+
+![](E:\Notes\框架\nodejs\image\模板选择.PNG)
+
+对各个选项的说明
+
+![](E:\Notes\框架\nodejs\image\解释.PNG)
+
+选项之后的配置
+
+![](E:\Notes\框架\nodejs\image\模板配置.PNG)
+
