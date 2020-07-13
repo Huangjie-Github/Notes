@@ -29,6 +29,8 @@ git branch --set-upstream-to=origin/master master
 #创建本地分支
 git branch "local branch name"
 
+#清除输入过的账号密码
+git config --system --unset credential.helper
 
 #克隆远程仓库到本地 
 #fileName:为指定本地文件夹的名字，如果没有就会使用远程仓库默认s的名称
