@@ -32,7 +32,13 @@ git branch "local branch name"
 #清除输入过的账号密码
 git config --system --unset credential.helper
 
-#克隆远程仓库到本地 
+#回滚
+git log
+git checkout [commit id] [file name]
+commit id:commit提交的编号
+file name:需要回滚的文件名称，不输入则整个版本回滚
+
+#克隆远程仓库到本地
 #fileName:为指定本地文件夹的名字，如果没有就会使用远程仓库默认s的名称
 git clone "git remote warehouse url" [ specified file name]
 ```
