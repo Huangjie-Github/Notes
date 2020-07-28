@@ -41,7 +41,7 @@
     ```
 
   - ```shell
-    #添加放行端口
+    #添加放行服务
     firewall-cmd --zone=public --add-service=http --permanent
     firewall-cmd --reload
     ```
