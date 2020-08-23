@@ -47,3 +47,15 @@ Threads_connected ：这个数值指的是打开的连接数.
 Threads_running ：这个数值指的是激活的连接数，这个数值一般远低于connected数值.
 
 Threads_connected 跟show processlist结果相同，表示当前连接数。准确的来说，Threads_running是代表当前并发数
+
+```shell
+#查询最大连接数
+show variables like 'max_connections';
+#修改最大连接数
+#方法一
+set global max_connections = 1000;
+#方法二 修改my.conf配置文件：加上或者修改max_connections
+max_connections = 1000
+
+```
+

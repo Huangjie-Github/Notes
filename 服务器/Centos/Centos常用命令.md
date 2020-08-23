@@ -17,6 +17,9 @@
     systemctl enable  firewalld.service
     #关闭开机自启
     systemctl disable firewalld.service
+    
+    #指定IP放行指定端口
+    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.142.166" port protocol="tcp" port="5432" accept"
     ```
 
 - 查看所有公开项目
@@ -38,7 +41,7 @@
     ```
 
   - ```shell
-    #添加放行端口
+    #添加放行服务
     firewall-cmd --zone=public --add-service=http --permanent
     firewall-cmd --reload
     ```
