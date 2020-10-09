@@ -7,6 +7,8 @@
 3. 由于没有函数参数，所以不能被重载
 4. 构造函数在类的构建时调用，析构函数在类的声明周期结束时调用
 
+Test.h文件
+
 ```c++
 #ifdef _TEST_H_ 
 #defind _TEST_H_ 
@@ -33,6 +35,8 @@ namespace test{
 } //namespace
 #endif //_TEST_H_
 ```
+
+Test.cpp文件
 
 ```c++
 #include <iostream>
